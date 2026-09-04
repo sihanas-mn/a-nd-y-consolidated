@@ -3,11 +3,13 @@ import { ArrowUp } from 'lucide-react'
 import Nav from './components/layout/Nav'
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
+import Loader from './components/Loader'
 import { iconLiquidGlass } from './constants'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Loader />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

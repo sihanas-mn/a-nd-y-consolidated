@@ -112,17 +112,17 @@ export default function Hero() {
                 </motion.div>
               </motion.div>
             </div>
-            
+
             {/* Buttons (always visible) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}
               className="mt-8 flex flex-wrap gap-3 relative z-10"
             >
               <Button href="#apartments" variant="gold">Explore apartments</Button>
               <Button href="#contact" variant="ghost">Schedule private viewing</Button>
             </motion.div>
           </div>
-          <div className="mt-12 flex items-center justify-between border-t border-white/20 pt-4 text-[10px] uppercase tracking-[0.22em] text-white/60"><span>Scroll to explore</span><ArrowDown size={15} className="animate-bounce text-[#c9a227]" /><span>{String(loaded).padStart(3, '0')} / 300 frames ready</span></div>
+          <div className="mt-12 flex items-center justify-between border-t border-white/20 pt-4 text-[10px] uppercase tracking-[0.22em] text-white/60"><span>Scroll to explore</span><ArrowDown size={15} className="animate-bounce text-[#c9a227]" /></div>
         </div>
       </div>
     </section>
