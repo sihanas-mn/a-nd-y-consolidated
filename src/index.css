@@ -791,3 +791,24 @@ footer {
 @keyframes blob-c {
     50% { transform: translate(-80px, 60px) scale(0.85); }
 }
+
+/* Luxury Gold Text Selection */
+::selection {
+    background: #c9a227;
+    color: #080a09;
+}
+
+/* Sleek Minimalist Luxury Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #080a09;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(201, 162, 39, 0.4);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 162, 39, 0.8);
+}

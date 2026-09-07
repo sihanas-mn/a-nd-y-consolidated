@@ -111,7 +111,7 @@ export default function Investment() {
               <Button href="#contact" variant="gold">Request investment brief</Button>
             </SectionIntro>
             <div className="relative grid mt-12 lg:mt-0 max-w-xl w-full">
-              {/* Block 1: Outlook */}
+
               <motion.div className="col-start-1 row-start-1" style={{ x: block1X, opacity: block1Opacity, visibility: block1Visibility }}>
                 <div className={glassPanelClass}>
                   <div className="relative z-10">
@@ -136,7 +136,7 @@ export default function Investment() {
                 </div>
               </motion.div>
 
-              {/* Block 2: Capital Appreciation */}
+
               <motion.div className="col-start-1 row-start-1" style={{ x: block2X, opacity: block2Opacity, visibility: block2Visibility }}>
                 <div className={glassPanelClass}>
                   <div className="relative z-10">
@@ -151,12 +151,11 @@ export default function Investment() {
                             <stop offset="100%" stopColor="#c9a227" stopOpacity="0.0" />
                           </linearGradient>
                         </defs>
-                        {/* Grid lines */}
                         <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
                         <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
                         <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
 
-                        {/* Area Path */}
+
                         <motion.path
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
@@ -175,7 +174,7 @@ export default function Investment() {
                           stroke="#c9a227"
                           strokeWidth="3"
                         />
-                        {/* Data Points */}
+
                         <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.3 }} viewport={{ once: true }} cx="80" cy="110" r="4" fill="#c9a227" />
                         <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.6 }} viewport={{ once: true }} cx="160" cy="85" r="4" fill="#c9a227" />
                         <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.9 }} viewport={{ once: true }} cx="240" cy="90" r="4" fill="#c9a227" />
@@ -206,7 +205,7 @@ export default function Investment() {
                 </div>
               </motion.div>
 
-              {/* Block 3: Rental Yield */}
+
               <motion.div className="col-start-1 row-start-1" style={{ x: block3X, opacity: block3Opacity, visibility: block3Visibility }}>
                 <div className={glassPanelClass}>
                   <div className="relative z-10">

@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const textRow1 = "ELEVATING URBAN LIVING WITH UNCOMPROMISING LUXURY, CUTTING-EDGE DESIGN, AND MODERN ARCHITECTURAL ELEGANCE AT EVERY TURN";
 const textRow2 = "A PRESTIGIOUS AND HIGHLY CONNECTED ADDRESS IN DEHIWALA, METICULOUSLY DESIGNED FOR AN EXCLUSIVE AND ELITE LIFESTYLE";
@@ -36,7 +36,6 @@ export default function LuxuryMarquee() {
     <section className="relative overflow-hidden bg-[#080a09] border-y border-[#C9A227]/20 flex items-center justify-center h-[50vh] sm:h-[70vh]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,162,39,0.06)_0%,transparent_70%)] pointer-events-none" />
       
-      {/* Angled container, absolute centered to prevent pushing section height, widened to cover corners */}
       <div className="absolute top-1/2 left-1/2 w-[200%] -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 sm:gap-4 -rotate-[10deg] scale-110 transform-gpu">
         <MarqueeRow text={textRow1} direction="left" />
         <MarqueeRow text={textRow2} direction="right" />

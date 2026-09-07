@@ -85,7 +85,7 @@ export default function Hero() {
         <div className="hero-content mx-auto flex h-full max-w-[1440px] flex-col justify-end px-6 pb-20 lg:px-12 lg:pb-24">
           <div className="max-w-3xl">
             <div className="relative grid">
-              {/* Text 1 */}
+
               <motion.div className="col-start-1 row-start-1 pointer-events-none" initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3 }}>
                 <motion.div style={{ opacity: text1Opacity, scale: text1Scale, y: text1Y, visibility: text1Visibility }} className="origin-bottom-left">
                   <div className="eyebrow"><span /> Dehiwala · Colombo, Sri Lanka</div>
@@ -94,7 +94,7 @@ export default function Hero() {
                 </motion.div>
               </motion.div>
 
-              {/* Text 2 */}
+
               <motion.div className="col-start-1 row-start-1 pointer-events-none">
                 <motion.div style={{ opacity: text2Opacity, scale: text2Scale, y: text2Y, visibility: text2Visibility }} className="origin-bottom-left">
                   <div className="eyebrow"><span /> Uncompromising quality</div>
@@ -103,7 +103,7 @@ export default function Hero() {
                 </motion.div>
               </motion.div>
 
-              {/* Text 3 */}
+
               <motion.div className="col-start-1 row-start-1 pointer-events-none">
                 <motion.div style={{ opacity: text3Opacity, scale: text3Scale, y: text3Y, visibility: text3Visibility }} className="origin-bottom-left">
                   <div className="eyebrow"><span /> The signature collection</div>
@@ -113,7 +113,7 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Buttons (always visible) */}
+
             <motion.div
               initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}
               className="mt-8 flex flex-wrap gap-3 relative z-10"

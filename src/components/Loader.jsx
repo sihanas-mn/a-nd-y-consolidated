@@ -27,7 +27,7 @@ export default function Loader() {
       }
     };
 
-    // Preload all frames
+
     for (let i = 0; i < frameCount; i++) {
       const img = new Image()
       img.src = framePath(i)
@@ -42,7 +42,7 @@ export default function Loader() {
       img.onerror = checkCompletion
     }
 
-    // Fallback in case of some weird network stall
+
     const fallback = setTimeout(() => {
         if (isMounted && !isComplete) setIsComplete(true);
     }, 15000);
@@ -63,10 +63,10 @@ export default function Loader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
         >
-          {/* Construction Animation */}
+
           <div className="relative w-40 h-48 mb-8">
             <svg viewBox="0 0 100 120" className="w-full h-full overflow-visible">
-               {/* Ground */}
+
                <motion.line 
                  initial={{ pathLength: 0 }}
                  animate={{ pathLength: 1 }}
@@ -77,7 +77,7 @@ export default function Loader() {
                  strokeWidth="2" 
                />
                
-               {/* Building Structure animated with pathLength */}
+
                <motion.path
                  d="M 25 110 L 25 30 L 75 30 L 75 110"
                  fill="none"
@@ -88,7 +88,7 @@ export default function Loader() {
                  transition={{ ease: "easeOut", duration: 0.3 }}
                />
                
-               {/* Grid / Floors (appear as it builds) */}
+
                <motion.g
                   initial={{ opacity: 0 }}
                   animate={{ opacity: percentage > 10 ? 1 : 0 }}
@@ -111,7 +111,7 @@ export default function Loader() {
                  <line x1="25" y1="50" x2="75" y2="50" stroke="#c9a227" strokeOpacity="0.3" strokeWidth="1" />
                </motion.g>
 
-               {/* Windows (reveal as percentage goes up) */}
+
                <motion.g 
                  initial={{ opacity: 0 }}
                  animate={{ opacity: percentage > 30 ? 1 : 0 }}
@@ -145,7 +145,7 @@ export default function Loader() {
                  <rect x="55" y="35" width="10" height="10" />
                </motion.g>
                
-               {/* Crane (rotates slightly) */}
+
                <motion.g
                  animate={{ rotate: [0, 8, 0, -4, 0] }}
                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -153,7 +153,6 @@ export default function Loader() {
                >
                  <line x1="75" y1="30" x2="75" y2="10" stroke="#ffffff" strokeOpacity="0.4" strokeWidth="2" />
                  <line x1="75" y1="10" x2="15" y2="10" stroke="#ffffff" strokeOpacity="0.4" strokeWidth="2" />
-                 {/* Crane cable lifting a block */}
                  <line x1="20" y1="10" x2="20" y2="25" stroke="#ffffff" strokeOpacity="0.4" strokeWidth="1" strokeDasharray="2 2" />
                  <rect x="17" y="25" width="6" height="6" fill="#c9a227" opacity="0.6" />
                </motion.g>

@@ -19,7 +19,6 @@ const row2Images = [
 const GalleryRow = ({ images, direction = "left" }) => {
   const animationClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
   
-  // Quadruple images to ensure single TrackContent is extremely wide for 4K screens
   const repeatedImages = [...images, ...images, ...images, ...images];
 
   const TrackContent = () => (
