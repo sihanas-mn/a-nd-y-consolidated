@@ -96,17 +96,17 @@ export default function Investment() {
     return () => window.removeEventListener('resize', resize)
   }, [loaded])
 
-  const glassPanelClass = "return-panel bg-white/[0.025] hover:bg-white/[0.05] transition-colors duration-500 border border-white/50 rounded-2xl backdrop-blur-md shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] text-white relative overflow-hidden before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none p-8"
+  const glassPanelClass = "return-panel bg-white/[0.025] hover:bg-white/[0.05] transition-colors duration-500 border border-white/50 rounded-2xl backdrop-blur-md shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] text-white relative overflow-hidden before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none p-5 lg:p-6"
 
   return (
     <section ref={sectionRef} id="investment" className="investment-section relative h-[250vh] !p-0">
       <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-[#29352e]">
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full object-cover" aria-label="Investment cinematic sequence" />
         <div className="absolute inset-0 bg-black/60 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-        
-        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 lg:px-12">
+
+        <div className="relative z-10 w-full mx-auto max-w-[1440px] px-6 lg:px-12 pt-24">
           <div className="investment-layout">
-            <SectionIntro number="05" label="The outlook" title={<>A place to live.<br /><i>A decision to keep.</i></>}>
+            <SectionIntro number="" label="The outlook" title={<>A place to live.<br /><i>A decision to keep.</i></>}>
               <p>Dehiwala's enduring connectivity and limited premium supply make A&Y Residences a home with lasting value.</p>
               <Button href="#contact" variant="gold">Request investment brief</Button>
             </SectionIntro>
@@ -117,7 +117,7 @@ export default function Investment() {
                   <div className="relative z-10">
                     <span className="text-[#c9a227] tracking-widest text-[10px] uppercase font-bold mb-3 block">Strategic Location</span>
                     <strong className="block text-3xl sm:text-4xl font-serif mt-2 mb-4 text-white font-light tracking-tight">The Dehiwala <i className="text-white/70 italic font-serif">Advantage.</i></strong>
-                    <p className="text-white/70 text-sm mb-8 leading-relaxed font-light">Located at the nexus of Colombo's southern expansion, Dehiwala offers unprecedented connectivity and high-net-worth demographic migration.</p>
+                    <p className="text-white/70 text-sm mb-4 leading-relaxed font-light">Located at the nexus of Colombo's southern expansion, Dehiwala offers unprecedented connectivity and high-net-worth demographic migration.</p>
                     <div className="space-y-5">
                       <div className="flex justify-between items-end border-b border-white/10 pb-3">
                         <span className="text-white/60 text-sm font-light">Property Value Index (5 Yrs)</span>
@@ -142,8 +142,8 @@ export default function Investment() {
                   <div className="relative z-10">
                     <span className="text-[#c9a227] tracking-widest text-[10px] uppercase font-bold mb-3 block">Wealth Generation</span>
                     <strong className="block text-3xl sm:text-4xl font-serif mt-2 mb-2 text-white font-light tracking-tight">Capital <i className="text-white/70 italic font-serif">Appreciation.</i></strong>
-                    
-                    <div className="relative h-44 w-full mt-8 mb-6">
+
+                    <div className="relative h-32 w-full mt-4 mb-4">
                       <svg viewBox="0 0 400 150" className="w-full h-full overflow-visible preserve-3d">
                         <defs>
                           <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
@@ -155,25 +155,25 @@ export default function Investment() {
                         <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
                         <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
                         <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="4 4" />
-                        
+
                         {/* Area Path */}
-                        <motion.path 
+                        <motion.path
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ duration: 1, delay: 0.8 }}
                           viewport={{ once: true, margin: "-50px" }}
-                          d="M0,120 L80,110 L160,85 L240,90 L320,40 L400,10 L400,150 L0,150 Z" 
-                          fill="url(#goldGradient)" 
+                          d="M0,120 L80,110 L160,85 L240,90 L320,40 L400,10 L400,150 L0,150 Z"
+                          fill="url(#goldGradient)"
                         />
-                        <motion.path 
+                        <motion.path
                           initial={{ pathLength: 0, opacity: 0 }}
                           whileInView={{ pathLength: 1, opacity: 1 }}
                           transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
                           viewport={{ once: true, margin: "-50px" }}
-                          d="M0,120 L80,110 L160,85 L240,90 L320,40 L400,10" 
-                          fill="none" 
-                          stroke="#c9a227" 
-                          strokeWidth="3" 
+                          d="M0,120 L80,110 L160,85 L240,90 L320,40 L400,10"
+                          fill="none"
+                          stroke="#c9a227"
+                          strokeWidth="3"
                         />
                         {/* Data Points */}
                         <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.3 }} viewport={{ once: true }} cx="80" cy="110" r="4" fill="#c9a227" />
@@ -212,7 +212,7 @@ export default function Investment() {
                   <div className="relative z-10">
                     <span className="text-[#c9a227] tracking-widest text-[10px] uppercase font-bold mb-3 block">Passive Income</span>
                     <strong className="block text-3xl sm:text-4xl font-serif mt-2 mb-4 text-white font-light tracking-tight">Rental <i className="text-white/70 italic font-serif">Revenues.</i></strong>
-                    <p className="text-white/70 text-sm mb-8 leading-relaxed font-light">Premium coastal properties maintain incredibly high occupancy rates, generating reliable, inflation-hedged passive income.</p>
+                    <p className="text-white/70 text-sm mb-4 leading-relaxed font-light">Premium coastal properties maintain incredibly high occupancy rates, generating reliable, inflation-hedged passive income.</p>
 
                     <div className="bg-white/[0.03] rounded-xl p-6 border border-white/10 relative overflow-hidden group hover:border-[#c9a227]/40 transition-colors duration-500">
                       <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
