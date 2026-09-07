@@ -13,14 +13,14 @@ export const navLinks = [['Project', '#project'], ['Apartments', '#apartments'],
 export const highlights = [['05', 'Floors'], ['10', 'Private residences'], ['3BR', 'Apartment typology'], ['1,250–1,450', 'Sq.ft living space']]
 
 export const amenities = [
-  [Dumbbell, 'Gymnasium', 'State-of-the-art fitness center for your daily wellness.', 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop'],
-  [Waves, 'Rooftop Lounge', 'Open-air spaces designed for evenings that linger.', 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=800&auto=format&fit=crop'],
-  [ShieldCheck, 'CCTV Security', '24/7 surveillance and secure access for peace of mind.', 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800&auto=format&fit=crop'],
-  [Zap, 'Generator Backup', 'Uninterrupted power supply for all residences.', 'https://images.unsplash.com/photo-1620288627223-53302f4e8c74?q=80&w=800&auto=format&fit=crop'],
-  [Phone, 'Intercom', 'Direct communication to security and front desk.', 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop'],
-  [Sparkles, 'Air Conditioning', 'Premium climate control throughout the residence.', 'https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop'],
-  [CarFront, 'Secure Parking', 'Allocated parking with generous, easy movement.', 'https://images.unsplash.com/photo-1590674899484-131297bc6ce1?q=80&w=800&auto=format&fit=crop'],
-  [Bell, 'Concierge Service', 'Personalized assistance for your everyday needs.', 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800&auto=format&fit=crop']
+  [Dumbbell, 'Gymnasium', 'State-of-the-art fitness center for your daily wellness.', '/assests/amenities/gymnasium.jpg'],
+  [Waves, 'Rooftop Lounge', 'Open-air spaces designed for evenings that linger.', '/assests/amenities/rooftop_lounge.jpg'],
+  [ShieldCheck, 'CCTV Security', '24/7 surveillance and secure access for peace of mind.', '/assests/amenities/cctv_security.jpg'],
+  [Zap, 'Generator Backup', 'Uninterrupted power supply for all residences.', '/assests/amenities/generator_backup.jpg'],
+  [Phone, 'Intercom', 'Direct communication to security and front desk.', '/assests/amenities/intercom.jpg'],
+  [Sparkles, 'Air Conditioning', 'Premium climate control throughout the residence.', '/assests/amenities/air_conditioning.jpg'],
+  [CarFront, 'Secure Parking', 'Allocated parking with generous, easy movement.', '/assests/amenities/secure_parking.jpg'],
+  [Bell, 'Concierge Service', 'Personalized assistance for your everyday needs.', '/assests/amenities/concierge_service.jpg']
 ]
 
 export const distances = [['Marine Drive', '02 min'], ['Galle Road', '03 min'], ['Colombo Fort', '18 min'], ['Bandaranaike Airport', '45 min']]

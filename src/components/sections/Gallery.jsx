@@ -1,19 +1,19 @@
 import SectionIntro from '../ui/SectionIntro'
 
 const row1Images = [
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",
-  "https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&q=80",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
+  "/assests/gallery/gallery_1.jpg",
+  "/assests/gallery/gallery_2.jpg",
+  "/assests/gallery/gallery_3.jpg",
+  "/assests/gallery/gallery_4.jpg",
+  "/assests/gallery/gallery_5.jpg",
 ];
 
 const row2Images = [
-  "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=600&q=80",
-  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80",
-  "https://images.unsplash.com/photo-1502672260266-1c1c2f44612c?w=600&q=80",
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+  "/assests/gallery/gallery_3.jpg",
+  "/assests/gallery/gallery_4.jpg",
+  "/assests/gallery/gallery_5.jpg",
+  "/assests/gallery/gallery_1.jpg",
+  "/assests/gallery/gallery_2.jpg",
 ];
 
 const GalleryRow = ({ images, direction = "left" }) => {
