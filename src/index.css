@@ -749,13 +749,23 @@ footer {
 }
 
 @keyframes marquee-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes marquee-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .animate-marquee-left {
@@ -783,13 +793,21 @@ footer {
 }
 
 @keyframes blob-a {
-    50% { transform: translate(120px, 80px) scale(1.2); }
+    50% {
+        transform: translate(120px, 80px) scale(1.2);
+    }
 }
+
 @keyframes blob-b {
-    50% { transform: translate(-120px, -60px) scale(1.15); }
+    50% {
+        transform: translate(-120px, -60px) scale(1.15);
+    }
 }
+
 @keyframes blob-c {
-    50% { transform: translate(-80px, 60px) scale(0.85); }
+    50% {
+        transform: translate(-80px, 60px) scale(0.85);
+    }
 }
 
 /* Luxury Gold Text Selection */
@@ -802,13 +820,16 @@ footer {
 ::-webkit-scrollbar {
     width: 6px;
 }
+
 ::-webkit-scrollbar-track {
     background: #080a09;
 }
+
 ::-webkit-scrollbar-thumb {
     background: rgba(201, 162, 39, 0.4);
     border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(201, 162, 39, 0.8);
 }
