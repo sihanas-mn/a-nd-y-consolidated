@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import Button from '../ui/Button'
@@ -9,11 +9,26 @@ export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false)
   const { scrollYProgress, scrollY } = useScroll()
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (typeof window !== "undefined") {
-      setIsScrolled(latest > window.innerHeight * 2.2)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      let flat = scrollY <= 50
+      
+      const apartmentsSection = document.getElementById('apartments')
+      if (apartmentsSection) {
+        const rect = apartmentsSection.getBoundingClientRect()
+        // Check if the navbar (approx 80px tall) is over the apartments section
+        if (rect.top <= 80 && rect.bottom >= 80) {
+          flat = true
+        }
+      }
+
+      setIsScrolled(!flat)
     }
-  })
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>

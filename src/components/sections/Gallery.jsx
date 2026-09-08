@@ -23,15 +23,15 @@ export default function Gallery() {
   const nextRef = useRef(null);
 
   return (
-    <section id="gallery" className="section section-paper !px-0 overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-12 mb-12">
+    <section id="gallery" className="section section-paper !px-0 overflow-hidden py-12 lg:py-16">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12 mb-4 lg:mb-6">
         <div className="gallery-head">
           <SectionIntro number="" label="The feeling" title={<>Space for a life<br /><i>well lived.</i></>} />
           <span>Project Gallery<br /><small>Curated visual collection</small></span>
         </div>
       </div>
       
-      <div className="w-full relative py-10">
+      <div className="w-full relative py-2 lg:py-4">
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -54,11 +54,11 @@ export default function Gallery() {
             prevEl: '.gallery-prev-btn',
             nextEl: '.gallery-next-btn',
           }}
-          className="w-full max-w-[100vw] !pb-12"
+          className="w-full max-w-[100vw] !pb-8"
         >
           {galleryItems.map((item, index) => (
-            <SwiperSlide key={index} className="!w-[280px] sm:!w-[400px] md:!w-[550px] lg:!w-[700px]">
-              <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl bg-black/10 relative group">
+            <SwiperSlide key={index} className="!w-[280px] sm:!w-[400px] md:!w-[500px] lg:!w-[650px]">
+              <div className="w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] rounded-[24px] overflow-hidden shadow-2xl bg-black/10 relative group">
                 <img src={item.src} alt={`Gallery ${index}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 md:p-8">
                   <p className="text-white text-sm md:text-lg font-medium tracking-wide translate-y-4 sm:group-hover:translate-y-0 transition-transform duration-300">
@@ -71,7 +71,7 @@ export default function Gallery() {
         </Swiper>
         
         {/* Navigation Buttons */}
-        <div className="flex justify-center items-center gap-4 mt-6">
+        <div className="flex justify-center items-center gap-4 mt-2">
           <button 
             className="gallery-prev-btn w-12 h-12 flex items-center justify-center rounded-full border border-[#74746d]/40 text-[#74746d] hover:bg-[#c9a227] hover:text-white hover:border-[#c9a227] transition-colors z-10"
           >
