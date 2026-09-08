@@ -538,21 +538,7 @@ h2 i,
     margin-bottom: 35px;
 }
 
-.return-panel {
-    padding: 35px;
-}
 
-.return-panel strong {
-    display: block;
-    margin: 52px 0 50px;
-    font: 52px/1 'Playfair Display';
-    max-width: 300px;
-}
-
-.return-row span {
-    font-size: 11px;
-    color: rgba(255, 255, 255, .5);
-}
 
 .gallery-head>span {
     text-align: right;
