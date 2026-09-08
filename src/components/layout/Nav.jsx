@@ -1,12 +1,19 @@
 import { useState } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { Menu, X, ChevronRight } from 'lucide-react'
 import Button from '../ui/Button'
 import { iconLiquidGlass, navLinks } from '../../constants'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
-  const { scrollYProgress } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false)
+  const { scrollYProgress, scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (typeof window !== "undefined") {
+      setIsScrolled(latest > window.innerHeight * 2.2)
+    }
+  })
 
   return (
     <>
@@ -20,12 +27,18 @@ export default function Nav() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-6 left-0 right-0 z-50 mx-auto w-[calc(100%-2rem)] max-w-[1440px] transition-all duration-500"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled ? "top-6 mx-auto w-[calc(100%-2rem)] max-w-[1440px]" : "top-0 mx-auto w-full"
+        }`}
       >
 
-        <div className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-8 w-full rounded-[20px] bg-black/40 border border-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_24px_50px_-26px_rgba(0,0,0,.7)] backdrop-blur-[24px] backdrop-saturate-[190%]">
+        <div className={`relative z-10 flex items-center justify-between px-6 py-4 lg:px-8 w-full transition-all duration-500 ${
+          isScrolled 
+            ? "rounded-[20px] bg-black/40 border border-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_24px_50px_-26px_rgba(0,0,0,.7)] backdrop-blur-[24px] backdrop-saturate-[190%]" 
+            : "bg-transparent border-transparent"
+        }`}>
           <a href="#top" className="flex items-center gap-3 text-white group">
-            <span className="logo-mark transition-transform duration-300 group-hover:scale-105">A<span>&</span>Y</span>
+            <span className="logo-mark text-white transition-transform duration-300 group-hover:scale-105">A<span>&</span>Y</span>
             <span className="hidden text-[10px] uppercase tracking-[0.22em] text-white/70 sm:block">Consolidated<br /><b className="font-normal text-white">Private Residences</b></span>
           </a>
           <nav className="hidden items-center gap-1 lg:flex">

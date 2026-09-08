@@ -1,68 +1,88 @@
-import SectionIntro from '../ui/SectionIntro'
+import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation, Autoplay } from 'swiper/modules';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import SectionIntro from '../ui/SectionIntro';
 
-const row1Images = [
-  "/assests/gallery/gallery_1.jpg",
-  "/assests/gallery/gallery_2.jpg",
-  "/assests/gallery/gallery_3.jpg",
-  "/assests/gallery/gallery_4.jpg",
-  "/assests/gallery/gallery_5.jpg",
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+
+const galleryItems = [
+  { src: "/assests/gallery/gallery_1.jpg", desc: "Elegant living spaces designed for comfort" },
+  { src: "/assests/gallery/gallery_2.jpg", desc: "Modern architectural details and finishes" },
+  { src: "/assests/gallery/gallery_3.jpg", desc: "Luxurious master suites with city views" },
+  { src: "/assests/gallery/gallery_4.jpg", desc: "State-of-the-art kitchen and dining areas" },
+  { src: "/assests/gallery/gallery_5.jpg", desc: "Exclusive rooftop amenities and pools" },
+  { src: "/assests/gallery/gallery_1.jpg", desc: "Elegant living spaces designed for comfort" },
+  { src: "/assests/gallery/gallery_2.jpg", desc: "Modern architectural details and finishes" },
+  { src: "/assests/gallery/gallery_3.jpg", desc: "Luxurious master suites with city views" },
 ];
-
-const row2Images = [
-  "/assests/gallery/gallery_3.jpg",
-  "/assests/gallery/gallery_4.jpg",
-  "/assests/gallery/gallery_5.jpg",
-  "/assests/gallery/gallery_1.jpg",
-  "/assests/gallery/gallery_2.jpg",
-];
-
-const GalleryRow = ({ images, direction = "left" }) => {
-  const animationClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
-  
-  const repeatedImages = [...images, ...images, ...images, ...images];
-
-  const TrackContent = () => (
-    <div className="flex shrink-0 gap-3 sm:gap-4 px-1.5 sm:px-2">
-      {repeatedImages.map((src, idx) => (
-        <div 
-          key={idx} 
-          className="w-[220px] h-[160px] sm:w-[320px] sm:h-[220px] lg:w-[420px] lg:h-[280px] rounded-xl overflow-hidden shrink-0 relative group/item cursor-pointer shadow-md"
-        >
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover/item:scale-110"
-            style={{ backgroundImage: `url('${src}')` }}
-          />
-          <div className="absolute inset-0 bg-black/10 group-hover/item:bg-transparent transition-colors duration-500" />
-        </div>
-      ))}
-    </div>
-  );
-
-  return (
-    <div className="w-full relative flex overflow-hidden py-2 pause-marquee">
-      <div className={`flex shrink-0 ${animationClass}`}>
-        <TrackContent />
-      </div>
-      <div className={`flex shrink-0 ${animationClass}`}>
-        <TrackContent />
-      </div>
-    </div>
-  );
-};
 
 export default function Gallery() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <section id="gallery" className="section section-paper !px-0 overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-12 mb-8">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12 mb-12">
         <div className="gallery-head">
           <SectionIntro number="" label="The feeling" title={<>Space for a life<br /><i>well lived.</i></>} />
           <span>Project Gallery<br /><small>Curated visual collection</small></span>
         </div>
       </div>
       
-      <div className="flex flex-col gap-1 -mx-2">
-        <GalleryRow images={row1Images} direction="left" />
-        <GalleryRow images={row2Images} direction="right" />
+      <div className="w-full relative py-10">
+        <Swiper
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          loop={true}
+          slidesPerView={'auto'}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 150,
+            modifier: 2.5,
+            slideShadows: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[EffectCoverflow, Navigation, Autoplay]}
+          navigation={{
+            prevEl: '.gallery-prev-btn',
+            nextEl: '.gallery-next-btn',
+          }}
+          className="w-full max-w-[100vw] !pb-12"
+        >
+          {galleryItems.map((item, index) => (
+            <SwiperSlide key={index} className="!w-[280px] sm:!w-[400px] md:!w-[550px] lg:!w-[700px]">
+              <div className="w-full aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl bg-black/10 relative group">
+                <img src={item.src} alt={`Gallery ${index}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 md:p-8">
+                  <p className="text-white text-sm md:text-lg font-medium tracking-wide translate-y-4 sm:group-hover:translate-y-0 transition-transform duration-300">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        
+        {/* Navigation Buttons */}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <button 
+            className="gallery-prev-btn w-12 h-12 flex items-center justify-center rounded-full border border-[#74746d]/40 text-[#74746d] hover:bg-[#c9a227] hover:text-white hover:border-[#c9a227] transition-colors z-10"
+          >
+            <ArrowLeft size={18} />
+          </button>
+          <button 
+            className="gallery-next-btn w-12 h-12 flex items-center justify-center rounded-full border border-[#74746d]/40 text-[#74746d] hover:bg-[#c9a227] hover:text-white hover:border-[#c9a227] transition-colors z-10"
+          >
+            <ArrowRight size={18} />
+          </button>
+        </div>
       </div>
     </section>
   )
